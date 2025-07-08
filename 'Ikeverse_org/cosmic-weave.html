@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cosmic Weave | Ikeverse</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cosmic-weave.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Video Background -->
+  <div class="cosmic-video-background">
+    <video autoplay muted loop id="cosmic-video">
+      <source src="assets/images/cosmic.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="quantum-nav cosmic-nav">
+    <div class="nav-portal">
+      <div class="portal-ring outer"></div>
+      <div class="portal-ring middle"></div>
+      <div class="portal-ring inner"></div>
+      <div class="portal-center">
+        <span class="logo-icon">🌌</span>
+      </div>
+    </div>
+    
+    <div class="nav-links-container">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <span class="link-icon"><i class="fas fa-home"></i></span>
+            <span class="link-text">Home</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="cosmic-weave.html" class="nav-link active">
+            <span class="link-icon"><i class="fas fa-atom"></i></span>
+            <span class="link-text">Cosmic Weave</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="roadmap.html" class="nav-link">
+            <span class="link-icon"><i class="fas fa-timeline"></i></span>
+            <span class="link-text">Our Journey</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="whitepaper.pdf" class="nav-link cta" target="_blank">
+            <span class="link-icon"><i class="fas fa-scroll"></i></span>
+            <span class="link-text">White Paper</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="nav-scanline"></div>
+    <div class="nav-hologram"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="cosmic-hero">
+    <h1>The Cosmic Weave</h1>
+    <p class="hero-slogan">"All knowledge is connected like the threads of a great mat" - Polynesian proverb</p>
+    <div class="floating-glyphs">
+      <span>🌐</span>
+      <span>🌌</span>
+      <span>🔗</span>
+    </div>
+  </section>
+
+  <!-- Globe Section -->
+  <section class="globe-section">
+    <div id="globe-container">
+      <div class="globe-ui">
+        <button class="globe-control" id="zoomIn" title="Zoom In">+</button>
+        <button class="globe-control" id="zoomOut" title="Zoom Out">-</button>
+        <button class="globe-control" id="resetView" title="Reset View">↺</button>
+        <button class="globe-control" id="toggleConnections" title="Toggle Connections">
+          <i class="fas fa-project-diagram"></i>
+        </button>
+      </div>
+      <svg id="globe"></svg>
+      <div class="culture-tooltip" id="tooltip"></div>
+    </div>
+    
+    <div class="culture-info">
+      <div class="culture-details">
+        <div class="culture-header">
+          <div class="culture-icon" id="culture-symbol">🌐</div>
+          <div>
+            <h2 class="culture-name" id="culture-name">Select a Wisdom Tradition</h2>
+            <div class="culture-location" id="culture-location"></div>
+          </div>
+        </div>
+        <p class="culture-desc" id="culture-desc">Click on any civilization on the globe to explore its wisdom traditions and connections to other cultures.</p>
+        <div class="culture-tags" id="culture-tags"></div>
+      </div>
+      
+      <div class="culture-connections">
+        <h3 class="connections-title">
+          <i class="fas fa-link"></i> Quantum-Ancestral Connections
+        </h3>
+        <div class="connections-grid" id="connections">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cosmic-footer">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4><span class="footer-icon">🌌</span> IKEVERSE</h4>
+        <p>Weaving ancient wisdom with quantum understanding</p>
+        <div class="footer-links-mobile">
+          <a href="#" class="social-link" title="DAO"><i class="fas fa-users"></i></a>
+          <a href="#" class="social-link" title="Research"><i class="fas fa-book"></i></a>
+          <a href="#" class="social-link" title="Elders"><i class="fas fa-hand-holding-heart"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cosmic-weave.html">Cosmic Weave</a></li>
+            <li><a href="roadmap.html">Our Journey</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="whitepaper.pdf">White Paper</a></li>
+            <li><a href="#">Research Portal</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="#">Community Forum</a></li>
+            <li><a href="#">Contact Elders</a></li>
+            <li><a href="#">Donate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© 2023 Ikeverse Foundation</span>
+        <span><a href="#">Terms</a></span>
+        <span><a href="#">Privacy</a></span>
+        <span><a href="#">Cultural Protocols</a></span>
+      </div>
+      <div class="footer-pulse"></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="https://unpkg.com/d3-geo@3"></script>
+  <script src="js/cosmic-weave.js"></script>
+</body>
+</html>

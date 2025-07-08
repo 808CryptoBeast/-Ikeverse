@@ -1,0 +1,433 @@
+/* STAR WARS CRAWL - IKEVERSE EDITION */
+:root {
+  --quantum-blue: #4fc3f7;
+  --quantum-blue-dark: #3a9bc7;
+  --ancestral-gold: #ffd700;
+  --ancestral-gold-dark: #c5a600;
+  --kemet-purple: #9c27b0;
+  --hawaiian-yellow: #e8c547;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap');
+
+.starwars-crawl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+  perspective: 350px;
+  color: #FFE81F;
+  font-family: 'Pathway Gothic One', sans-serif;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, 
+    rgba(0,0,0,0) 0%, 
+    rgba(10,14,23,0.95) 100%);
+}
+
+.starwars-crawl-content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 800px;
+  margin-left: -400px;
+  transform-origin: 50% 100%;
+  transform: rotateX(25deg) translateY(100%);
+  animation: crawl 60s linear 5s forwards;
+  filter: drop-shadow(0 0 10px rgba(255,232,31,0.3));
+  transition: opacity 1s ease-out;
+}
+
+/* INTRO SEQUENCE */
+.crawl-intro {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: introFade 4s ease-out forwards;
+  color: var(--quantum-blue);
+  text-shadow: 0 0 10px var(--quantum-blue);
+  font-style: italic;
+  white-space: nowrap;
+  width: 90%;
+  text-align: center;
+}
+
+@keyframes introFade {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+  30% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  70% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+}
+
+.crawl-title {
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 20px #FFE81F;
+  opacity: 0;
+  animation: fadeIn 0.1s ease-out 4s forwards;
+  background: linear-gradient(to right, 
+    var(--ancestral-gold), 
+    var(--quantum-blue),
+    var(--ancestral-gold));
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 5px;
+}
+
+.crawl-text {
+  font-size: 2rem;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  text-align: justify;
+  margin: 0 auto 3rem;
+  width: 90%;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 4.5s forwards;
+  text-shadow: 0 0 5px rgba(255,232,31,0.7);
+}
+
+.crawl-mission {
+  font-size: 2.2rem;
+  margin-top: 5rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 5s forwards;
+  color: var(--quantum-blue);
+}
+
+/* CULTURAL DIVIDERS */
+.cultural-divider {
+  font-size: 4rem;
+  margin: 3rem 0;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 4s forwards;
+  color: var(--ancestral-gold);
+  text-shadow: 0 0 10px var(--ancestral-gold-dark);
+}
+
+/* HIGHLIGHTS */
+.highlight {
+  color: var(--quantum-blue);
+  text-shadow: 0 0 8px var(--quantum-blue);
+  font-weight: bold;
+}
+
+/* ANIMATIONS */
+@keyframes crawl {
+  0% { transform: rotateX(25deg) translateY(100%); }
+  100% { transform: rotateX(25deg) translateY(-100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* STAR PARTICLES */
+.star-particle {
+  position: absolute;
+  background: #FFE81F;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float linear infinite;
+  z-index: -1;
+}
+
+/* PAUSE BUTTON */
+.pause-crawl {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.5);
+  color: #FFE81F;
+  border: 1px solid #FFE81F;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-transform: uppercase;
+}
+
+.pause-crawl:hover {
+  opacity: 1;
+  background: rgba(79, 195, 247, 0.2);
+}
+
+/* ENDING SEQUENCE - FULLY RESPONSIVE */
+.crawl-ending-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 20;
+  background: radial-gradient(ellipse at center, 
+    rgba(0,0,0,0.8) 0%, 
+    rgba(10,14,23,0.95) 100%);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.crawl-ending {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  margin: auto;
+  background: rgba(10, 14, 23, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(79, 195, 247, 0.3);
+  border: 1px solid var(--ancestral-gold);
+  transform-origin: center;
+  animation: scaleIn 1.5s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Cultural Symbols */
+.cultural-symbols {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  margin: 1rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.cultural-symbols span {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  animation: floatSpin 6s infinite ease-in-out;
+  will-change: transform;
+}
+
+@keyframes floatSpin {
+  0%, 100% { transform: translateY(0) rotateY(0); }
+  50% { transform: translateY(-15px) rotateY(180deg); }
+}
+
+.hawaiian-symbol { 
+  color: var(--hawaiian-yellow);
+  animation-delay: 0.1s;
+  text-shadow: 0 0 15px var(--hawaiian-yellow);
+}
+
+.kemet-symbol { 
+  font-family: 'Noto Sans Egyptian Hieroglyphs', sans-serif;
+  color: var(--ancestral-gold);
+  animation-delay: 0.3s;
+  text-shadow: 0 0 15px var(--ancestral-gold-dark);
+  line-height: 1;
+}
+
+.quantum-symbol { 
+  color: var(--quantum-blue);
+  animation-delay: 0.5s;
+  text-shadow: 0 0 15px var(--quantum-blue);
+}
+
+/* Language Styling */
+.dual-language-block {
+  text-align: center;
+  width: 100%;
+}
+
+.language-group {
+  margin: 1.5rem 0;
+}
+
+.language-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.8rem 0;
+}
+
+.hawaiian, .kemet, .quantum {
+  font-weight: bold;
+  line-height: 1.4;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.hawaiian {
+  color: var(--hawaiian-yellow);
+}
+
+.kemet {
+  font-family: 'Noto Sans Egyptian Hieroglyphs', sans-serif;
+  color: var(--ancestral-gold);
+  line-height: 1.2;
+}
+
+.quantum {
+  color: var(--quantum-blue);
+}
+
+.english {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: rgba(255,232,31,0.8);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Content Sections */
+.sacred-message {
+  background: rgba(10,14,23,0.7);
+  border-left: 3px solid var(--ancestral-gold);
+  border-right: 3px solid var(--quantum-blue);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 5px;
+}
+
+.proverb-block {
+  border-top: 1px dashed var(--ancestral-gold);
+  border-bottom: 1px dashed var(--quantum-blue);
+  padding: 1rem 0;
+  margin: 2rem 0;
+}
+
+/* CTA Button */
+.quantum-btn {
+  background: linear-gradient(
+    45deg,
+    var(--hawaiian-yellow),
+    var(--ancestral-gold),
+    var(--quantum-blue)
+  );
+  border: none;
+  padding: 1rem 2rem;
+  margin: 1.5rem auto 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  clip-path: polygon(
+    10% 0%,
+    100% 0,
+    90% 100%,
+    0% 100%
+  );
+  transition: all 0.4s ease;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  will-change: transform;
+}
+
+.quantum-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 5px 15px rgba(232, 197, 71, 0.6),
+    0 5px 25px rgba(79, 195, 247, 0.4);
+}
+
+/* PLATFORM TRANSITION */
+.platform-transition {
+  animation: platformFadeOut 2s forwards;
+}
+
+@keyframes platformFadeOut {
+  0% { opacity: 1; filter: brightness(1); }
+  100% { opacity: 0; filter: brightness(5); }
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1024px) {
+  .starwars-crawl-content {
+    width: 90%;
+    margin-left: -45%;
+  }
+  
+  .crawl-title {
+    font-size: 3.5rem;
+  }
+  
+  .crawl-text {
+    font-size: 1.6rem;
+  }
+  
+  .crawl-intro {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .starwars-crawl {
+    perspective: 250px;
+  }
+  
+  .crawl-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .crawl-text {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+  
+  .crawl-mission {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .cultural-divider {
+    font-size: 3rem;
+  }
+  
+  .crawl-ending {
+    padding: 1.5rem;
+    transform: scale(0.95);
+  }
+  
+  .pause-crawl {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .crawl-ending {
+    transform: scale(0.85);
+    padding: 1rem;
+  }
+  
+  .cultural-symbols span {
+    font-size: 2.2rem;
+  }
+  
+  .language-group {
+    margin: 0.8rem 0;
+  }
+  
+  .quantum-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

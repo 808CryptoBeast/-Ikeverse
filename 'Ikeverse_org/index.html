@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ikeverse | Quantum-Ancestral Knowledge Matrix</title>
+  <meta name="description" content="Bridging ancient wisdom with quantum science through immersive visualization">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/starwars.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <script src="js/starwars.js" defer></script>
+</head>
+<body class="loading" data-mode="quantum">
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="quantum-spinner"></div>
+    <p>Initializing Knowledge Matrix...</p>
+  </div>
+
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop id="starfield-video">
+      <source src="assets/images/starfield.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="quantum-nav">
+    <div class="nav-portal">
+      <div class="portal-ring outer"></div>
+      <div class="portal-ring middle"></div>
+      <div class="portal-ring inner"></div>
+      <div class="portal-center">
+        <span class="logo-icon">⚛</span>
+      </div>
+    </div>
+    
+    <div class="nav-links-container">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">
+            <span class="link-icon"><i class="fas fa-home"></i></span>
+            <span class="link-text">Home</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="cosmic-weave.html" class="nav-link">
+            <span class="link-icon"><i class="fas fa-atom"></i></span>
+            <span class="link-text">Cosmic Weave</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="roadmap.html" class="nav-link">
+            <span class="link-icon"><i class="fas fa-timeline"></i></span>
+            <span class="link-text">Timeline</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="whitepaper.pdf" class="nav-link cta" target="_blank">
+            <span class="link-icon"><i class="fas fa-scroll"></i></span>
+            <span class="link-text">White Paper</span>
+            <span class="link-pulse"></span>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="nav-controls">
+        <button class="nav-control" id="nav-expand">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="nav-mode-toggle">
+          <span class="mode-option active" data-mode="quantum">Q</span>
+          <span class="mode-option" data-mode="ancestral">A</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="nav-scanline"></div>
+    <div class="nav-hologram"></div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="quantum-grid">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-line">WEAVING THE</span>
+          <span class="title-line">QUANTUM-ANCESTRAL</span>
+          <span class="title-line">KNOWLEDGE MATRIX</span>
+        </h1>
+        <p class="hero-slogan">Decoding the sacred algorithms of our ancestors through quantum visualization</p>
+        <button class="quantum-btn pulse" id="enterMatrix">
+          <span class="btn-text">ENTER THE KNOWLEDGE FIELD</span>
+          <span class="btn-glow"></span>
+        </button>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-glyphs">
+          <span>𓃭</span>
+          <span>⚛</span>
+          <span>𓃗</span>
+        </div>
+      </div>
+    </section>
+
+<!-- Knowledge Galaxy Section -->
+<section class="galaxy-section" id="galaxy">
+  <div class="section-header">
+    <h2>THE LIVING KNOWLEDGE MATRIX</h2>
+    <p class="section-subtitle">Interactive 3D visualization connecting ancient wisdom systems with modern science</p>
+    <div class="section-decoration">
+      <div class="deco-line"></div>
+      <div class="deco-glyph">𓃭</div>
+      <div class="deco-line"></div>
+    </div>
+  </div>
+  
+  <div class="galaxy-container">
+    <!-- Star Wars Crawl Container -->
+    <div class="starwars-crawl" id="ikeverseCrawl">
+      <div class="crawl-intro">A LONG TIME AGO IN ANCESTRAL MEMORY...</div>
+      
+      <div class="starwars-bg"></div>
+      
+      <div class="starwars-crawl-content">
+        <div class="crawl-title">THE IKEVERSE</div>
+        
+        <div class="crawl-text">
+          <p>Across time, our ancestors encoded <span class="highlight">profound Knowledge</span> into chants, symbols, architecture, and oral traditions - wisdom that modern systems have often fragmented, dismissed, or reduced to myth.</p>
+          
+          <div class="cultural-divider">
+            <span>𓃭</span>
+            <span>⚛</span>
+            <span>𓃗</span>
+          </div>
+          
+          <p>Yet within the verses of the <span class="highlight">Kumulipo</span>, the hymns of <span class="highlight">Kemet</span>, and the sacred breath of countless ancient cultures lies a unified understanding of life, creation, and consciousness that rivals today's scientific revelations.</p>
+          
+          <p>This Platform is a sanctuary for reconnection - a place where ancient wisdom meets emerging sciences like <span class="highlight">quantum theory</span>, <span class="highlight">blockchain</span>, and <span class="highlight">cryptography</span>.</p>
+        </div>
+        
+        <div class="crawl-mission">
+          <p>To awaken <span class="highlight">collective memory</span> by bridging ancient wisdom with modern innovation.</p>
+          <p>We are building a decentralized learning platform and historical data aggregator that reconnects fragmented knowledge systems and contemporary science.</p>
+          <p>Through cultural preservation, open education, and technological integration, we aim to inspire a new generation of seekers, stewards, and systems-thinkers who walk forward with the insight of those who came before.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Galaxy Viewport Background -->
+    <div id="galaxy-viewport" class="stars-background"></div>
+  </div>
+</section>
+
+    <!-- Cultural Nodes -->
+    <section class="nodes-section">
+      <div class="node-card" data-culture="kemet">
+        <div class="node-glow"></div>
+        <h3>KEMET</h3>
+        <p>Sacred geometry encoding quantum spin ratios</p>
+        <div class="node-connections">
+          <span>↔ Fractal Algorithms</span>
+          <span>↔ Crystallography</span>
+        </div>
+      </div>
+      <div class="node-card" data-culture="olmec">
+        <div class="node-glow"></div>
+        <h3>OLMEC</h3>
+        <p>Serpent DNA and fluid dynamics</p>
+        <div class="node-connections">
+          <span>↔ Topology</span>
+          <span>↔ Astrophysics</span>
+        </div>
+      </div>
+      <div class="node-card" data-culture="kumulipo">
+        <div class="node-glow"></div>
+        <h3>KUMULIPO</h3>
+        <p>Chanted quantum entanglement</p>
+        <div class="node-connections">
+          <span>↔ String Theory</span>
+          <span>↔ Holography</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="quantum-footer">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>IKEVERSE</h4>
+        <p>Decolonizing knowledge through quantum-indigenous synthesis</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" class="social-link" data-tooltip="Join Our DAO">𓃭</a>
+        <a href="#" class="social-link" data-tooltip="Research Portal">𓃚</a>
+        <a href="#" class="social-link" data-tooltip="Elder Council">𓃗</a>
+      </div>
+    </div>
+    <div class="footer-pulse"></div>
+  </footer>
+
+  <!-- Three.js Core -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+
+  <!-- CSS2DRenderer with guaranteed initialization -->
+  <script>
+    // Custom loader that works with any version of Three.js
+    function loadCSS2DRenderer() {
+      return new Promise((resolve) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/renderers/CSS2DRenderer.js';
+        
+        script.onload = function() {
+          if (typeof CSS2DRenderer !== 'undefined') {
+            window.CSS2DRenderer = CSS2DRenderer;
+            return resolve();
+          }
+          
+          if (typeof THREE !== 'undefined' && THREE.CSS2DRenderer) {
+            window.CSS2DRenderer = THREE.CSS2DRenderer;
+            return resolve();
+          }
+          
+          const renderer = window.CSS2DRenderer || 
+                         (window.THREE && window.THREE.CSS2DRenderer) ||
+                         (window.CSS2DRenderer && window.CSS2DRenderer.default);
+          
+          if (renderer) {
+            window.CSS2DRenderer = renderer;
+            return resolve();
+          }
+          
+          console.warn('Creating fallback CSS2DRenderer');
+          window.CSS2DRenderer = function() {
+            this.domElement = document.createElement('div');
+            this.setSize = function() {};
+            this.render = function() {};
+          };
+          resolve();
+        };
+        
+        script.onerror = function() {
+          console.warn('Failed to load CSS2DRenderer, using fallback');
+          window.CSS2DRenderer = function() {
+            this.domElement = document.createElement('div');
+            this.setSize = function() {};
+            this.render = function() {};
+          };
+          resolve();
+        };
+        
+        document.head.appendChild(script);
+      });
+    }
+  </script>
+
+  <!-- Other dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+  <script>
+    // Simple loading state management
+    let loadingFailed = false;
+    
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Nav expansion toggle
+      const navExpand = document.getElementById('nav-expand');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navExpand && navLinks) {
+        navExpand.addEventListener('click', function() {
+          navLinks.classList.toggle('expanded');
+          this.querySelector('i').classList.toggle('fa-chevron-right');
+          this.querySelector('i').classList.toggle('fa-chevron-left');
+        });
+      }
+      
+      // Mode toggle functionality
+      const modeOptions = document.querySelectorAll('.mode-option');
+      modeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          modeOptions.forEach(opt => opt.classList.remove('active'));
+          this.classList.add('active');
+          
+          const mode = this.dataset.mode;
+          document.body.setAttribute('data-mode', mode);
+          
+          // Add visual feedback
+          const pulse = document.createElement('div');
+          pulse.className = 'mode-pulse';
+          pulse.style.backgroundColor = mode === 'quantum' ? 
+            'var(--quantum-blue)' : 'var(--ancestral-gold)';
+          document.body.appendChild(pulse);
+          
+          setTimeout(() => {
+            pulse.remove();
+          }, 1000);
+        });
+      });
+      
+      // Enter Matrix button effect
+      const enterBtn = document.getElementById('enterMatrix');
+      if (enterBtn) {
+        enterBtn.addEventListener('click', function() {
+          // Add ripple effect
+          const ripple = document.createElement('span');
+          ripple.className = 'btn-ripple';
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 1000);
+          
+          // Navigate to galaxy section
+          document.getElementById('galaxy').scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+
+    async function initializeApp() {
+      try {
+        // 1. Load CSS2DRenderer (with fallback)
+        await loadCSS2DRenderer();
+        
+        // 2. Verify minimum requirements
+        if (!window.THREE) {
+          throw new Error('Three.js failed to load');
+        }
+        
+        // 3. Load main application
+        await loadScript('js/galaxy.js');
+        
+        // 4. Complete initialization
+        completeLoading();
+        
+      } catch (error) {
+        console.error('Initialization error:', error);
+        loadingFailed = true;
+        showErrorFallback(error.message);
+      }
+    }
+    
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = () => reject(new Error(`Failed to load ${src}`));
+        document.head.appendChild(script);
+      });
+    }
+    
+    function completeLoading() {
+      // Remove preloader after short delay for smooth transition
+      setTimeout(() => {
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
+      }, 500);
+    }
+    
+    function showErrorFallback(message) {
+      // Create error display
+      const errorDiv = document.createElement('div');
+      errorDiv.id = 'error-fallback';
+      errorDiv.innerHTML = `
+        <div class="error-content">
+          <h2>Loading Error</h2>
+          <p>${message}</p>
+          <button id="reload-button">Reload Page</button>
+          <p class="small">If the problem persists, try another browser</p>
+        </div>
+      `;
+      
+      // Add styles directly
+      const style = document.createElement('style');
+      style.textContent = `
+        #error-fallback {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(10, 14, 23, 0.95);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+          color: white;
+          text-align: center;
+        }
+        #error-fallback .error-content {
+          max-width: 500px;
+          padding: 2rem;
+          background: rgba(0,0,0,0.5);
+          border-radius: 8px;
+        }
+        #error-fallback button {
+          padding: 0.75rem 1.5rem;
+          background: #00f7ff;
+          color: #0a0e17;
+          border: none;
+          border-radius: 4px;
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: 1rem;
+        }
+        #error-fallback .small {
+          font-size: 0.8rem;
+          margin-top: 1.5rem;
+          opacity: 0.8;
+        }
+      `;
+      
+      document.head.appendChild(style);
+      document.body.appendChild(errorDiv);
+      
+      // Add reload functionality
+      document.getElementById('reload-button').addEventListener('click', () => {
+        window.location.reload();
+      });
+    }
+    
+    // Start initialization with timeout
+    initializeApp();
+    
+    // Add timeout in case initialization hangs
+    setTimeout(() => {
+      if (document.body.classList.contains('loading') && !loadingFailed) {
+        showErrorFallback('Loading is taking longer than expected');
+      }
+    }, 10000); // 10 second timeout
+  </script>
+</body>
+</html>
