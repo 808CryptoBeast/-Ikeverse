@@ -111,54 +111,57 @@
     </div>
   </footer>
 
-  <!-- Three.js Core -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+<!-- Three.js Core -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
 
-  <!-- CSS2DRenderer with guaranteed initialization -->
-  <script>
-    // Custom loader that works with any version of Three.js
-    function loadCSS2DRenderer() {
-      return new Promise((resolve) => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/renderers/CSS2DRenderer.js';
-        
-        script.onload = function() {
-          if (typeof CSS2DRenderer !== 'undefined') {
-            window.CSS2DRenderer = CSS2DRenderer;
-            return resolve();
-          }
-          if (typeof THREE !== 'undefined' && THREE.CSS2DRenderer) {
-            window.CSS2DRenderer = THREE.CSS2DRenderer;
-            return resolve();
-          }
-          console.warn('Creating fallback CSS2DRenderer');
-          window.CSS2DRenderer = function() {
-            this.domElement = document.createElement('div');
-            this.setSize = function() {};
-            this.render = function() {};
-          };
-          resolve();
+<!-- WebGL Utility (required for WEBGL global) -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/WebGL.js"></script>
+
+<!-- CSS2DRenderer with guaranteed initialization -->
+<script>
+  // Custom loader that works with any version of Three.js
+  function loadCSS2DRenderer() {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/renderers/CSS2DRenderer.js';
+      
+      script.onload = function() {
+        if (typeof CSS2DRenderer !== 'undefined') {
+          window.CSS2DRenderer = CSS2DRenderer;
+          return resolve();
+        }
+        if (typeof THREE !== 'undefined' && THREE.CSS2DRenderer) {
+          window.CSS2DRenderer = THREE.CSS2DRenderer;
+          return resolve();
+        }
+        console.warn('Creating fallback CSS2DRenderer');
+        window.CSS2DRenderer = function() {
+          this.domElement = document.createElement('div');
+          this.setSize = function() {};
+          this.render = function() {};
         };
-        script.onerror = function() {
-          console.warn('Failed to load CSS2DRenderer, using fallback');
-          window.CSS2DRenderer = function() {
-            this.domElement = document.createElement('div');
-            this.setSize = function() {};
-            this.render = function() {};
-          };
-          resolve();
+        resolve();
+      };
+      script.onerror = function() {
+        console.warn('Failed to load CSS2DRenderer, using fallback');
+        window.CSS2DRenderer = function() {
+          this.domElement = document.createElement('div');
+          this.setSize = function() {};
+          this.render = function() {};
         };
-        document.head.appendChild(script);
-      });
-    }
-  </script>
+        resolve();
+      };
+      document.head.appendChild(script);
+    });
+  }
+</script>
 
-  <!-- Other dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<!-- Other dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
-  <!-- Custom Scripts -->
-  <script src="'Ikeverse_org/js/starwars.js" defer></script>
-  <script src="'Ikeverse_org/js/galaxy.js" defer></script>
+<!-- Custom Scripts -->
+<script src="'Ikeverse_org/js/starwars.js" defer></script>
+<script src="'Ikeverse_org/js/galaxy.js" defer></script>
 </body>
 </html>
