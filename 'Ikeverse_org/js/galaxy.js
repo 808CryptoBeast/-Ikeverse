@@ -1,3 +1,5 @@
+import { WEBGL } from 'three/examples/jsm/WebGL.js';
+
 class KnowledgeGalaxy {
   constructor() {
     // Verify WebGL support
