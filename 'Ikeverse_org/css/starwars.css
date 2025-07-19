@@ -21,7 +21,6 @@
   perspective: 350px;
   color: #FFE81F;
   font-family: 'Pathway Gothic One', sans-serif;
-  pointer-events: none;
   background: radial-gradient(ellipse at center, 
     rgba(0,0,0,0) 0%, 
     rgba(10,14,23,0.95) 100%);
@@ -31,13 +30,14 @@
   position: absolute;
   top: 0;
   left: 50%;
-  width: 800px;
-  margin-left: -400px;
+  width: 1000px;
+  margin-left: -500px;
   transform-origin: 50% 100%;
   transform: rotateX(25deg) translateY(100%);
-  animation: crawl 60s linear 5s forwards;
+  animation: crawl 45s linear forwards;
   filter: drop-shadow(0 0 10px rgba(255,232,31,0.3));
   transition: opacity 1s ease-out;
+  opacity: 0;
 }
 
 /* INTRO SEQUENCE */
@@ -46,32 +46,33 @@
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   text-transform: uppercase;
   opacity: 0;
-  animation: introFade 4s ease-out forwards;
   color: var(--quantum-blue);
   text-shadow: 0 0 10px var(--quantum-blue);
   font-style: italic;
   white-space: nowrap;
   width: 90%;
   text-align: center;
+  pointer-events: none;
+  display: none;
 }
 
 @keyframes introFade {
   0% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-  30% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   70% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
 }
 
 .crawl-title {
-  font-size: 5rem;
+  font-size: 6rem;
   text-transform: uppercase;
   margin-bottom: 3rem;
   text-shadow: 0 0 20px #FFE81F;
   opacity: 0;
-  animation: fadeIn 0.1s ease-out 4s forwards;
+  animation: fadeIn 0.1s ease-out 2.5s forwards;
   background: linear-gradient(to right, 
     var(--ancestral-gold), 
     var(--quantum-blue),
@@ -81,45 +82,45 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 5px;
+  width: 100%;
+  text-align: center;
 }
 
 .crawl-text {
-  font-size: 2rem;
+  font-size: 2.4rem;
   line-height: 1.6;
   letter-spacing: 2px;
   text-align: justify;
   margin: 0 auto 3rem;
-  width: 90%;
+  width: 100%;
   opacity: 0;
-  animation: fadeIn 0.5s ease-out 4.5s forwards;
+  animation: fadeIn 0.5s ease-out 3s forwards;
   text-shadow: 0 0 5px rgba(255,232,31,0.7);
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .crawl-mission {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   margin-top: 5rem;
   text-align: center;
   opacity: 0;
-  animation: fadeIn 0.5s ease-out 5s forwards;
+  animation: fadeIn 0.5s ease-out 3.5s forwards;
   color: var(--quantum-blue);
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* CULTURAL DIVIDERS */
 .cultural-divider {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 3rem 0;
   text-align: center;
   opacity: 0;
-  animation: fadeIn 0.5s ease-out 4s forwards;
+  animation: fadeIn 0.5s ease-out 3s forwards;
   color: var(--ancestral-gold);
   text-shadow: 0 0 10px var(--ancestral-gold-dark);
-}
-
-/* HIGHLIGHTS */
-.highlight {
-  color: var(--quantum-blue);
-  text-shadow: 0 0 8px var(--quantum-blue);
-  font-weight: bold;
 }
 
 /* ANIMATIONS */
@@ -143,56 +144,103 @@
   z-index: -1;
 }
 
-/* PAUSE BUTTON */
-.pause-crawl {
+/* PLAY BUTTON */
+.crawl-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.7);
+  color: #FFE81F;
+  border: 2px solid #FFE81F;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.crawl-play-btn:hover {
+  background: rgba(255, 232, 31, 0.2);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.crawl-play-btn i {
+  font-size: 1.5rem;
+}
+
+/* CRAWL CONTROLS */
+.crawl-controls {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.crawl-control-btn {
   background: rgba(0,0,0,0.5);
   color: #FFE81F;
   border: 1px solid #FFE81F;
   border-radius: 4px;
+  padding: 8px 15px;
   cursor: pointer;
-  z-index: 100;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  pointer-events: auto;
   font-family: 'Pathway Gothic One', sans-serif;
   text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.pause-crawl:hover {
+.crawl-control-btn:hover {
   opacity: 1;
   background: rgba(79, 195, 247, 0.2);
 }
 
-/* ENDING SEQUENCE - FULLY RESPONSIVE */
+/* ENDING SEQUENCE */
 .crawl-ending-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: none;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
   z-index: 20;
   background: radial-gradient(ellipse at center, 
     rgba(0,0,0,0.8) 0%, 
     rgba(10,14,23,0.95) 100%);
-  padding: 20px;
-  box-sizing: border-box;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.crawl-ending-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 .crawl-ending {
   text-align: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   padding: 2rem;
   margin: auto;
   background: rgba(10, 14, 23, 0.9);
@@ -201,7 +249,6 @@
   border: 1px solid var(--ancestral-gold);
   transform-origin: center;
   animation: scaleIn 1.5s ease-out forwards;
-  will-change: transform, opacity;
 }
 
 @keyframes scaleIn {
@@ -338,6 +385,7 @@
   text-transform: uppercase;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   will-change: transform;
+  pointer-events: auto;
 }
 
 .quantum-btn:hover {
@@ -347,33 +395,23 @@
     0 5px 25px rgba(79, 195, 247, 0.4);
 }
 
-/* PLATFORM TRANSITION */
-.platform-transition {
-  animation: platformFadeOut 2s forwards;
-}
-
-@keyframes platformFadeOut {
-  0% { opacity: 1; filter: brightness(1); }
-  100% { opacity: 0; filter: brightness(5); }
-}
-
 /* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 1024px) {
   .starwars-crawl-content {
-    width: 90%;
-    margin-left: -45%;
+    width: 95%;
+    margin-left: -47.5%;
   }
   
   .crawl-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
   
   .crawl-text {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
   
   .crawl-intro {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -383,51 +421,139 @@
   }
   
   .crawl-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
   }
   
   .crawl-text {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     line-height: 1.5;
   }
   
   .crawl-mission {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-top: 3rem;
   }
   
   .cultural-divider {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+  
+  .crawl-controls {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .crawl-control-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .crawl-play-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
   
   .crawl-ending {
     padding: 1.5rem;
-    transform: scale(0.95);
+    margin: 1rem auto;
   }
   
-  .pause-crawl {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  .crawl-ending-wrapper {
+    padding: 20px;
   }
 }
 
 @media (max-height: 700px) {
-  .crawl-ending {
-    transform: scale(0.85);
-    padding: 1rem;
+  .crawl-title {
+    font-size: 2.5rem;
   }
   
-  .cultural-symbols span {
-    font-size: 2.2rem;
+  .crawl-text {
+    font-size: 1.4rem;
   }
   
-  .language-group {
-    margin: 0.8rem 0;
+  .crawl-ending-container {
+    justify-content: flex-start;
   }
   
-  .quantum-btn {
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
+  .crawl-ending-wrapper {
+    padding-top: 1rem;
+    justify-content: flex-start;
+  }
+}
+
+/* Additional CSS for new elements */
+.sacred-principle {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.principle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 1.5rem 0;
+  font-size: 2rem;
+}
+
+.principle-title {
+  font-size: 2.2rem;
+  color: var(--ancestral-gold);
+  margin-bottom: 2rem;
+}
+
+.technology-bridge {
+  background: rgba(79, 195, 247, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.bridge-pair {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  border-bottom: 1px dashed var(--ancestral-gold);
+}
+
+.ancient {
+  color: var(--hawaiian-yellow);
+  font-style: italic;
+}
+
+.modern {
+  color: var(--quantum-blue);
+  font-weight: bold;
+}
+
+.call-to-action {
+  margin-top: 3rem;
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.call-to-action p {
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .principle {
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+  
+  .bridge-pair {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .call-to-action {
+    font-size: 1.8rem;
   }
 }
